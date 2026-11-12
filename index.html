@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Linked List Addition Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Visualize the Invisible</h1>
+    <p>Digit-by-Digit Addition Using Singly Linked Lists (Decimal Supported)</p>
+</header>
+<header class="main-title">
+    ADD TWO NUMBERS IN A SINGLY LINKED LIST
+</header>
+
+<div class="dashboard">
+
+    <!-- INPUT PANEL -->
+    <div class="card input-panel">
+        <h2>Input</h2>
+        <input id="num1" placeholder="Number 1 (e.g. 12.34)">
+        <input id="num2" placeholder="Number 2 (e.g. 5.678)">
+        <button id="buildBtn">Build Linked Lists</button>
+        <button id="nextBtn" disabled>Next Step</button>
+        <div class="carry-box">
+            Carry: <span id="carry">0</span>
+        </div>
+    </div>
+
+    <!-- VISUALIZATION PANEL -->
+    <div class="card visual-panel">
+        <h2>Visualization</h2>
+
+        <div class="list-section">
+            <label>List 1</label>
+            <div id="list1" class="list"></div>
+        </div>
+
+        <div class="list-section">
+            <label>List 2</label>
+            <div id="list2" class="list"></div>
+        </div>
+
+        <div class="list-section">
+            <label>Result</label>
+            <div id="result" class="list"></div>
+            <div class="decimal-result">
+                <strong>Decimal Result:</strong>
+                <span id="decimalResult">0</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- EXPLANATION -->
+<div class="explanation-panel split-panel">
+    
+    <!-- LEFT: Step Explanation -->
+    <div class="step-box">
+        <h2>Step Explanation</h2>
+        <div id="explanation"></div>
+    </div>
+
+    <!-- RIGHT: Algorithm Explanation -->
+    <div class="algo-box">
+        <h2>Algorithm Logic</h2>
+        <pre>
+sum = val1 + val2 + carry;
+carry = Math.floor(sum / 10);
+newNode = new Node(sum % 10);
+current.next = newNode;
+        </pre>
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

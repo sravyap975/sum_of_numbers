@@ -1,0 +1,224 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: #fff;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+header p {
+    opacity: 0.85;
+}
+
+/* DASHBOARD */
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* CARD */
+.card {
+    background: rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* INPUT PANEL */
+.input-panel input {
+    width: 90%;
+    padding: 10px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: none;
+}
+
+.input-panel button {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+}
+
+.carry-box {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+#carry {
+    background: #ff4757;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* VISUAL PANEL */
+.list-section {
+    margin-top: 15px;
+}
+
+label {
+    font-weight: bold;
+}
+
+/* ================= LIST CONTAINER ================= */
+
+.list {
+    display: flex;
+    margin-top: 10px;
+    min-height: 60px;
+    position: relative;
+    padding-right: 40px;
+}
+
+/* DECIMAL DIVIDER (visual only) */
+.list::after {
+    content: "";
+    position: absolute;
+    right: 120px;
+    top: 0;
+    height: 100%;
+    border-left: 2px dotted rgba(255, 255, 255, 0.6);
+}
+
+/* Decimal dot indicator */
+.list::before {
+    content: ".";
+    position: absolute;
+    right: 112px;
+    top: -18px;
+    font-size: 28px;
+    opacity: 0.9;
+}
+
+/* ================= NODES ================= */
+
+.node {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px; /* extra space for arrow */
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+    animation: pop 0.3s ease-in;
+    position: relative;
+}
+
+/* ================= LINKED LIST ARROWS ================= */
+
+.node:not(:last-child)::after {
+    content: "➜";
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 22px;
+    opacity: 0.85;
+}
+
+/* Arrow color per list */
+.list1-node:not(:last-child)::after {
+    color: #b8ecff;
+}
+
+.list2-node:not(:last-child)::after {
+    color: #f1d4ff;
+}
+
+.result-node:not(:last-child)::after {
+    color: #c9ffe2;
+}
+
+/* NODE COLORS */
+.list1-node {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.list2-node {
+    background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+}
+
+.result-node {
+    background: linear-gradient(135deg, #84fab0, #8fd3f4);
+}
+
+.active {
+    box-shadow: 0 0 20px gold;
+    transform: scale(1.1);
+}
+
+/* DECIMAL RESULT */
+.decimal-result {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+/* EXPLANATION */
+.explanation-panel {
+    margin: 0 20px 20px;
+    font-size: 18px;
+}
+
+/* ANIMATION */
+@keyframes pop {
+    from {
+        transform: scale(0.6);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+/* SPLIT STEP + ALGORITHM PANEL */
+.split-panel {
+    display: grid;
+    grid-template-columns: 2fr 1.3fr;
+    gap: 20px;
+}
+
+/* LEFT SIDE */
+.step-box {
+    padding-right: 10px;
+}
+
+/* RIGHT SIDE – ALGORITHM */
+.algo-box {
+    background: rgba(0, 0, 0, 0.25);
+    border-left: 4px solid #4facfe;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.algo-box h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #e6f4ff;
+}
+
+.algo-box pre {
+    font-family: Consolas, "Courier New", monospace;
+    font-size: 14px;
+    color: #d6ecff;
+    line-height: 1.6;
+    white-space: pre-wrap;
+    margin: 0;
+}
